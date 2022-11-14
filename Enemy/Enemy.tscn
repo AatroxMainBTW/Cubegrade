@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Enemy/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/cube.PNG" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 12 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21.5, 18 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 90353.1
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource( 1 )
+
+[node name="Polygon2D" type="Sprite" parent="."]
+self_modulate = Color( 1, 0.0313726, 0.0313726, 1 )
+scale = Vector2( 0.136646, 0.1375 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0.5, 2 )
+shape = SubResource( 2 )
+
+[node name="Detector" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Detector" to="." method="_on_Detector_body_entered"]
