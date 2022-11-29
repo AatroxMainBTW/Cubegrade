@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/DebugFreeTrial-MVdYB.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD/MainMenu.tres" type="Theme" id=2]
+[ext_resource path="res://HUD/GameOver.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/4 = true
+glow_levels/6 = true
+glow_levels/7 = true
+glow_intensity = 0.49
+glow_bloom = 0.31
+glow_blend_mode = 1
+glow_hdr_scale = 1.74
+glow_bicubic_upscale = true
+glow_high_quality = true
+adjustment_enabled = true
+adjustment_brightness = 0.79
+adjustment_contrast = 1.82
+adjustment_saturation = 3.76
+
+[node name="GameOver" type="Control" groups=["Gameover"]]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.203922, 0.203922, 0.203922, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 250
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 54.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "GAMEOVER"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 304.0
+margin_right = 1024.0
+margin_bottom = 432.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ED" type="LineEdit" parent="VBoxContainer/VBoxContainer2"]
+margin_right = 1024.0
+margin_bottom = 54.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "Type your name"
+align = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer2"]
+margin_top = 74.0
+margin_right = 1024.0
+margin_bottom = 128.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "Save score"
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 682.0
+margin_right = 1024.0
+margin_bottom = 682.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer2/Button" to="." method="_on_Button_pressed"]

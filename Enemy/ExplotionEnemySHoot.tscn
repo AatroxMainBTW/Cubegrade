@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemy/Explotion.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=2]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, -360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.0113636, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.00252783 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0.543478, 0.782609 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[node name="Explotion" type="CPUParticles2D"]
+self_modulate = Color( 0.811765, 0.0156863, 1, 1 )
+amount = 16
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+angle_curve = SubResource( 2 )
+scale_amount = 10.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 3 )
+script = ExtResource( 1 )

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/SHRIMPS COOL FOOD COLLECTION.png" type="Texture" id=1]
+[ext_resource path="res://Hazard/Bread.gd" type="Script" id=2]
+
+[sub_resource type="TileSet" id=1]
+0/name = "SHRIMPS COOL FOOD COLLECTION.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 853, 399, 163, 163 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 77.5, 82.5 )
+
+[node name="Area2D" type="Sprite"]
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+self_modulate = Color( 0.0666667, 1, 0.0196078, 1 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
+
+[node name="Bonus" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bonus"]
+position = Vector2( 82.4999, 87.5 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Bonus" to="." method="_on_Bonus_body_entered"]

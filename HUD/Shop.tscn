@@ -46,30 +46,33 @@ anchor_right = 0.5
 margin_left = -512.0
 margin_right = 512.0
 margin_bottom = 600.0
+custom_constants/separation = 14
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 180.0
-margin_right = 1058.0
-margin_bottom = 216.0
+margin_top = 68.0
+margin_right = 1024.0
+margin_bottom = 104.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_left = 402.0
-margin_right = 656.0
+margin_left = 385.0
+margin_right = 639.0
 margin_bottom = 36.0
 rect_pivot_offset = Vector2( -288, 0 )
 custom_fonts/font = SubResource( 1 )
 text = "Options and Shop"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 220.0
-margin_right = 1058.0
-margin_bottom = 420.0
+margin_top = 118.0
+margin_right = 1024.0
+margin_bottom = 318.0
+custom_constants/separation = 21
 alignment = 1
 
 [node name="1" type="Panel" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 350.0
+margin_left = 151.0
+margin_right = 501.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 350, 200 )
 custom_styles/panel = SubResource( 8 )
@@ -104,8 +107,8 @@ custom_styles/normal = SubResource( 10 )
 text = "Buy"
 
 [node name="2" type="Panel" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 354.0
-margin_right = 704.0
+margin_left = 522.0
+margin_right = 872.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 350, 200 )
 custom_styles/panel = SubResource( 8 )
@@ -139,27 +142,34 @@ custom_fonts/font = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 text = "Buy"
 
-[node name="3" type="Panel" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 708.0
-margin_right = 1058.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 332.0
+margin_right = 1024.0
+margin_bottom = 532.0
+custom_constants/separation = 21
+alignment = 1
+
+[node name="3" type="Panel" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 151.0
+margin_right = 501.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 350, 200 )
 custom_styles/panel = SubResource( 8 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/3"]
 margin_left = 19.0
 margin_top = 43.0
 margin_right = 334.0
 margin_bottom = 155.0
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/3/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/3/VBoxContainer"]
 margin_right = 315.0
 margin_bottom = 54.0
 custom_fonts/font = SubResource( 7 )
 text = "x3 speed shots"
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/3/VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3/3/VBoxContainer"]
 margin_top = 58.0
 margin_right = 315.0
 margin_bottom = 112.0
@@ -167,7 +177,43 @@ custom_fonts/font = SubResource( 7 )
 text = "3000"
 align = 1
 
-[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer2/3/VBoxContainer" groups=["Shop"]]
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer3/3/VBoxContainer" groups=["Shop"]]
+margin_top = 116.0
+margin_right = 315.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Buy"
+
+[node name="4" type="Panel" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 522.0
+margin_right = 872.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 350, 200 )
+custom_styles/panel = SubResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3/4"]
+margin_left = 19.0
+margin_top = 43.0
+margin_right = 334.0
+margin_bottom = 155.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/4/VBoxContainer"]
+margin_right = 315.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 7 )
+text = "Double Shots"
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer3/4/VBoxContainer"]
+margin_top = 58.0
+margin_right = 315.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 7 )
+text = "5000"
+align = 1
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer3/4/VBoxContainer"]
 margin_top = 116.0
 margin_right = 315.0
 margin_bottom = 152.0
@@ -176,10 +222,10 @@ custom_styles/normal = SubResource( 10 )
 text = "Buy"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 505.0
-margin_top = 502.0
-margin_right = 684.0
-margin_bottom = 613.0
+margin_left = 476.0
+margin_top = 537.0
+margin_right = 655.0
+margin_bottom = 648.0
 custom_colors/font_color = Color( 0.192157, 0.858824, 0.0392157, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "Message
@@ -187,4 +233,5 @@ text = "Message
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/1/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/2/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer2/3/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/3/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/4/VBoxContainer/Button4" to="." method="_on_Button4_pressed"]

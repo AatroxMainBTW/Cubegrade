@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/DebugFreeTrial-MVdYB.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/cube.PNG" type="Texture" id=2]
+[ext_resource path="res://HUD/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://HUD/MainMenu.tres" type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Environment" id=6]
+background_mode = 4
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/4 = true
+glow_levels/6 = true
+glow_levels/7 = true
+glow_bloom = 0.09
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 1.21
+adjustment_contrast = 2.15
+adjustment_saturation = 2.64
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+rect_scale = Vector2( 0.995935, 0.994551 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.184314, 0.184314, 0.184314, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = 3.0
+margin_right = 9.0
+margin_bottom = 3.0
+custom_constants/separation = 200
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 41.0
+margin_right = 1024.0
+margin_bottom = 131.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Cubgrade"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 331.0
+margin_right = 1024.0
+margin_bottom = 559.0
+alignment = 1
+
+[node name="NewGame" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 54.0
+theme = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "New Game"
+
+[node name="Leaderboard" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 58.0
+margin_right = 1024.0
+margin_bottom = 112.0
+theme = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+text = "Leaderboard"
+
+[node name="Options" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 116.0
+margin_right = 1024.0
+margin_bottom = 170.0
+theme = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 174.0
+margin_right = 1024.0
+margin_bottom = 228.0
+theme = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+text = "Exit"
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 0.941176, 0.0745098, 0.0745098, 1 )
+position = Vector2( 142, 121 )
+scale = Vector2( 0.611801, 0.58125 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.133333, 1, 1 )
+position = Vector2( 188, 469 )
+scale = Vector2( 0.611801, 0.58125 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+self_modulate = Color( 0.678431, 0.0627451, 0.901961, 1 )
+position = Vector2( 897, 290 )
+scale = Vector2( 0.611801, 0.58125 )
+texture = ExtResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Leaderboard" to="." method="_on_Leaderboard_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

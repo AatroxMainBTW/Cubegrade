@@ -37,3 +37,7 @@ func _on_Button3_pressed():
 func _showPop(response):
 	$Label.text = response
 
+
+
+func _on_Button4_pressed():
+	get_tree().call_group("Main","_scoreChecker",5000)

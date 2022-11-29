@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JOJOXD.mp3-07c056b9dfbf77711c226d1b83943e7c.mp3str"
+
+[deps]
+
+source_file="res://Player/JOJOXD.mp3"
+dest_files=[ "res://.import/JOJOXD.mp3-07c056b9dfbf77711c226d1b83943e7c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

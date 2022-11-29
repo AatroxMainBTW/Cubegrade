@@ -1,0 +1,240 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/DebugFreeTrial-MVdYB.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/cube.PNG" type="Texture" id=2]
+[ext_resource path="res://HUD/MainMenu.tres" type="Theme" id=3]
+[ext_resource path="res://HUD/Options.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=8]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Environment" id=6]
+background_mode = 4
+glow_enabled = true
+glow_levels/1 = true
+glow_levels/2 = true
+glow_levels/4 = true
+glow_levels/6 = true
+glow_levels/7 = true
+glow_bloom = 0.09
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 1.21
+adjustment_contrast = 2.15
+adjustment_saturation = 2.64
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.184314, 0.184314, 0.184314, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = 3.0
+margin_right = 9.0
+margin_bottom = 3.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 15.0
+margin_right = 1024.0
+margin_bottom = 105.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Options"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 205.0
+margin_right = 1024.0
+margin_bottom = 585.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer_UP" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 60.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer_UP"]
+margin_top = 3.0
+margin_right = 52.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 7 )
+text = "Up"
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer_UP"]
+margin_left = 72.0
+margin_right = 110.0
+margin_bottom = 60.0
+theme = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+text = "Z"
+
+[node name="HBoxContainer_Down" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 140.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer_Down"]
+margin_top = 3.0
+margin_right = 118.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 7 )
+text = "Down"
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer_Down"]
+margin_left = 138.0
+margin_right = 175.0
+margin_bottom = 60.0
+theme = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+toggle_mode = true
+text = "S"
+
+[node name="HBoxContainer_LEFT" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 160.0
+margin_right = 1024.0
+margin_bottom = 220.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer_LEFT"]
+margin_top = 3.0
+margin_right = 79.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 7 )
+text = "Left"
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer_LEFT"]
+margin_left = 99.0
+margin_right = 141.0
+margin_bottom = 60.0
+theme = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+toggle_mode = true
+text = "Q"
+
+[node name="HBoxContainer_RIGHT" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 240.0
+margin_right = 1024.0
+margin_bottom = 300.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer_RIGHT"]
+margin_top = 3.0
+margin_right = 110.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 7 )
+text = "Right"
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer_RIGHT"]
+margin_left = 130.0
+margin_right = 166.0
+margin_bottom = 60.0
+theme = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "D"
+
+[node name="HBoxContainer_FIRE" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 320.0
+margin_right = 1024.0
+margin_bottom = 380.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer_FIRE"]
+margin_top = 3.0
+margin_right = 79.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 7 )
+text = "Fire"
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer_FIRE"]
+margin_left = 99.0
+margin_right = 229.0
+margin_bottom = 60.0
+theme = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+toggle_mode = true
+text = "Space"
+
+[node name="Mainmene" type="Button" parent="."]
+margin_left = 424.0
+margin_top = 281.0
+margin_right = 905.0
+margin_bottom = 341.0
+theme = ExtResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+text = "Main menu"
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 0.941176, 0.0745098, 0.0745098, 1 )
+position = Vector2( 120, 141 )
+scale = Vector2( 0.611801, 0.58125 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.133333, 1, 1 )
+position = Vector2( 855, 137 )
+scale = Vector2( 0.611801, 0.58125 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+self_modulate = Color( 0.678431, 0.0627451, 0.901961, 1 )
+position = Vector2( 933, 508 )
+scale = Vector2( 0.611801, 0.58125 )
+texture = ExtResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 6 )
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer_UP/Button" to="." method="_on_Up_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer_Down/Button" to="." method="_on_Down_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer_LEFT/Button" to="." method="_on_LEFT_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer_RIGHT/Button" to="." method="_on_RIGHT_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer_FIRE/Button" to="." method="_on_FIRE_pressed"]
+[connection signal="pressed" from="Mainmene" to="." method="_on_Mainmene_pressed"]

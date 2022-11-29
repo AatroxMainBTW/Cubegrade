@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/DebugFreeTrial-MVdYB.otf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_right = 512.0
+margin_bottom = 102.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Place" type="Label" parent="HBoxContainer2"]
+margin_left = 285.0
+margin_top = 33.0
+margin_right = 361.0
+margin_bottom = 69.0
+grow_vertical = 0
+custom_colors/font_color = Color( 0.113725, 0.721569, 0.882353, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Place"
+align = 1
+valign = 1
+
+[node name="Player" type="Label" parent="HBoxContainer2"]
+margin_left = 461.0
+margin_top = 33.0
+margin_right = 553.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0.113725, 0.721569, 0.882353, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Player"
+align = 1
+valign = 1
+
+[node name="Score" type="Label" parent="HBoxContainer2"]
+margin_left = 653.0
+margin_top = 33.0
+margin_right = 739.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0.113725, 0.721569, 0.882353, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Score"
+align = 1
+valign = 1
